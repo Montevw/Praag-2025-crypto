@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>🚀 CRYPTO FRIENDS ICO – PRAAG 2025 🚀</title>
+<style>
+  :root{
+    --neon:#00ff99;--ink:#0a0a0a;--text:#f2f2f2;--accent:#ffcc00;--cyan:#66ffff;--pink:#ff66ff;--danger:#ff3366
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family:Arial, Helvetica, sans-serif; color:var(--text);
+    background: radial-gradient(1000px 800px at 10% 10%, rgba(0,255,153,.15), transparent),
+                radial-gradient(800px 600px at 90% 20%, rgba(102,255,255,.12), transparent),
+                radial-gradient(700px 700px at 50% 90%, rgba(255,102,255,.08), transparent),
+                #0a0a0a;
+  }
+  .container{max-width:980px;margin:0 auto;padding:24px}
+  .glow{color:var(--neon);text-shadow:0 0 10px var(--neon), 0 0 20px var(--neon)}
+  .blink{animation:blinker 1s linear infinite}
+  @keyframes blinker{50%{opacity:0}}
+  .box{border:2px solid var(--neon);padding:18px;margin:22px 0;background:rgba(0,0,0,.7);box-shadow:0 0 20px rgba(0,255,153,.25);border-radius:14px}
+  .subtle{opacity:.9}
+  .rates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .rate-card{border:1px solid rgba(102,255,255,.35);padding:12px;border-radius:10px;background:rgba(0,0,0,.35)}
+  .rate-card strong{color:var(--cyan)}
+  .ascii{font-family:monospace;white-space:pre;color:var(--pink);text-align:center;margin:18px 0}
+  .marquee{overflow:hidden;white-space:nowrap;border:2px dashed rgba(255,204,0,.5);border-radius:12px;background:rgba(0,0,0,.45)}
+  .marquee span{display:inline-block;padding:10px 24px;animation:scroll 18s linear infinite}
+  @keyframes scroll{from{transform:translateX(100%)} to{transform:translateX(-100%)} }
+  .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:18px 0}
+  .button{
+    cursor:pointer;border:2px solid var(--accent);background:transparent;color:var(--accent);
+    padding:14px 22px;border-radius:999px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    box-shadow:0 0 12px rgba(255,204,0,.3);
+  }
+  .button:hover{filter:brightness(1.2)}
+  .button.pulse{animation:pulse 1.3s ease-in-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 rgba(255,204,0,.7)}70%{box-shadow:0 0 28px rgba(255,204,0,.3)}100%{box-shadow:0 0 0 rgba(255,204,0,0)}}
+  .tiny{font-size:.9rem;color:#cde}
+  h1,h2,h3{margin:6px 0}
+  h1{font-size:clamp(28px,4vw,44px)}
+  h2{font-size:clamp(18px,2.4vw,26px)}
+  h3{font-size:clamp(16px,2vw,22px)}
+  ul{margin:8px 0 8px 22px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  @media (max-width:800px){.rates,.grid-2{grid-template-columns:1fr}}
+  .tag{display:inline-block;margin:4px 6px 0 0;padding:4px 8px;border-radius:999px;border:1px solid rgba(0,255,153,.5);color:#bfffe6;font-size:.8rem}
+  .disc{opacity:.85}
+  .countdown{font-variant-numeric:tabular-nums}
+  .danger{color:var(--danger)}
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);z-index:50}
+  .modal .card{max-width:520px;background:#0f0f0f;border:2px solid var(--neon);border-radius:16px;padding:22px;text-align:center;box-shadow:0 0 30px rgba(0,255,153,.35)}
+  .x{position:absolute;top:14px;right:16px;border:none;background:transparent;color:#ddd;font-size:22px;cursor:pointer}
+  .mono{font-family:monospace}
+  .divider{height:1px;background:linear-gradient(90deg, transparent, rgba(0,255,153,.5), transparent);margin:18px 0}
+</style>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/></head>
+<body>
+<div class="container">
+<h1 class="glow blink">💰💎🚀 CRYPTO FRIENDS ICO – PRAAG 2025 🚀💎💰</h1>
+<h2 class="glow subtle">*** 100% GAMMELE FRIENDSHIP ROI – PRAAG BLOCK PARTY ***</h2>
+<div class="box">
+<p><strong>Beste gewaardeerde INVESTEERDER,</strong></p>
+<p>Je wallet-ID is geselecteerd voor de meest winstgevende sociale blockchain van het jaar: <span class="glow">Annual Praag Crypto Retreat™</span>!</p>
+<p>
+<strong>📍 LOCATION:</strong> Praag, Tsjechië<br/>
+<strong>📆 DATE:</strong> <span id="dateText">17 september t/m 22 september</span>  | 
+        <strong>⏳ Countdown:</strong> <span class="countdown" id="countdown">—</span><br/>
+<strong>💱 Buy‑in:</strong> Alleen je aanwezigheid + glimlach‑token
+      </p>
+<div aria-label="Nepkoersen live ticker" class="marquee tiny">
+<span id="tickerTape">BRC ▲ +0.0% • PZT ▲ +0.0% • LHC ▲ +0.0% • LVC ▬ 0.0% • PRG‑TOUR ▲ +0.0%</span>
+</div>
+<div class="cta">
+<button class="button pulse" id="claimBtn">🎁 Claim je Airdrop</button>
+<button class="button" id="whatsappBtn">💬 Join WhatsApp GroupChain</button>
+</div>
+<p class="tiny disc">Niet reageren = <span class="danger">soft fork zonder jou</span>. De blockchain vergeet nooit.</p>
+</div>
+<div class="box">
+<h3 class="glow">📊 LIVE GAMMELE FRIENDSHIP EXCHANGE RATES</h3>
+<div class="rates" id="rates"></div>
+</div>
+<div class="box">
+<h3 class="glow">🔐 SMART CONTRACT: ULTRA‑DETAIL TASK ALLOCATION</h3>
+<div class="divider"></div>
+<div class="grid-2">
+<div>
+<h3>💼 Sol-Monte (MasterNode) – <em>Restaurant Token Curator</em></h3>
+<div class="tag">FoodChain</div> <div class="tag">Reserveringen</div> <div class="tag">Menu Due Diligence</div>
+<ul>
+<li>Reserveer <strong>ontbijt, lunch, diner</strong> voor alle dagen. Streef naar korte wachtrijen (= lage gas fees).</li>
+<li>Portefeuille‑mix: traditioneel Tsjechisch, modern, budget‑friendly, uitzicht/terras.</li>
+<li>Check dieet‑compatibiliteit (vega/vegan/allergieën) en geef vooraf <span class="mono">.pdf</span> menu‑links door.</li>
+<li>On‑chain KPI’s: wachttijd &lt; 15 min, tevredenheid ≥ 9/10, bier‑liquiditeit hoog.</li>
+</ul>
+</div>
+<div>
+<h3>🗺 Link Wim &amp; Tia Rein – <em>City Exploration Protocol</em></h3>
+<div class="tag">Rondleiding</div> <div class="tag">Hidden Gems</div> <div class="tag">Foto‑Hashrate</div>
+<ul>
+<li>Ontwerp een <strong>1–3 uur</strong> durende route met balans cultuur ↔︎ playtime ↔︎ bierpauzes.</li>
+<li>Bevat minimaal: 1 iconisch uitzichtpunt, 1 verborgen steegje, 1 historische fun‑fact per stop.</li>
+<li>Integreer een mini‑challenge (b.v. “vind de gigantische easter‑egg”).</li>
+<li>On‑chain KPI’s: 2+ groepfoto’s, &lt; 7% verdwijningskans, glimlach‑index hoog.</li>
+</ul>
+</div>
+<div>
+<h3>🎯 Floki Rutger &amp; Pepe Meije – <em>PubQuiz Token Launch</em></h3>
+<div class="tag">QuizChain</div> <div class="tag">5 Ronden + Bonus (optional)</div> <div class="tag">Memes Allowed</div>
+<ul>
+<li>Minimaal <strong>5 rondes</strong>: algemene kennis, no-music, plaatjes/foto's, Praag‑special, lightning, other shizzle allowed.</li>
+<li>1 bonusvraag met risk/reward (double‑or‑nothing staking).</li>
+<li>Materiaal: antwoordblaadjes, pen‑liquiditeit, score‑ledger met transparant governance model.</li>
+<li>Prijs: symbolisch, eet‑ of drinkbaar (NFT‑trofee optioneel).</li>
+<li>On‑chain KPI’s: gelach per minuut ↑, foute‑zekerheid ↓, tie‑breakers beschikbaar.</li>
+</ul>
+</div>
+<div>
+<h3>🎨 Doge Rene &amp; Bonk Lennert – <em>Afternoon DApp Developers</em></h3>
+<div class="tag">Middagactiviteit</div> <div class="tag">Fun‑per‑Second</div> <div class="tag">Leaderboards</div>
+<ul>
+<li>Organiseer 1 kernactiviteit (sportief/creatief/escape/boot/etc.).</li>
+<li>Inclusief boeking, locatie, tijdsduur en travelchain (regen‑fallback inbegrepen).</li>
+<li>Voeg optionele points‑mechaniek toe (stickers, stempels, of QR‑codes voor de memecoins).</li>
+<li>On‑chain KPI’s: deelname ≥ 100%, blessures ≤ 5% (alleen ego), fun‑score ≥ 9/10.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="box">
+<h3 class="glow">📜 BLOCKCHAIN DISCLAIMER</h3>
+<ul>
+<li>ROI: Maximale fun, minimale kater.</li>
+<li>Liquiditeit: Bier, koffie en cola — <em>volatiel maar overvloedig</em>.</li>
+<li>Governance: 100% friend consensus. Niet reageren = soft fork.</li>
+</ul>
+<div class="ascii">
+          ______
+
+        /        \\
+       /  🚀🚀   \\
+      |    PRAAG   |
+       \   2025   /
+        \________/
+         |      |
+         |  🍺  |
+         |______|
+      </div>
+<p class="tiny">Met cryptografische groet,<br/><strong>Monte</strong> — <em>CEO (Chief Eating Officer) · Vriendenfonds™</em></p>
+</div>
+</div>
+<!-- Modal -->
+<div aria-labelledby="airdropTitle" aria-modal="true" class="modal" id="airdropModal" role="dialog">
+<div class="card">
+<button aria-label="Sluiten" class="x" id="closeModal">✕</button>
+<h3 class="glow" id="airdropTitle">🎉 Airdrop Claimed!</h3>
+<p>Je hebt succesvol je <strong>Friendship Token</strong> geclaimd. Bevestig deelname in de <em>WhatsApp GroupChain</em> om je plek in het volgende block te vergrendelen.</p>
+<div class="cta"><button class="button" id="confirmJoin">✅ Ik ben erbij</button></div>
+</div>
+</div>
+<script defer="defer">
+  // ===== Editable date: set your trip start date here (YYYY-MM-DD HH:MM) =====
+  const TRIP_DATE = '2025-09-12 10:00'; // ← pas aan
+  // ==========================================================================
+
+  const dateText = document.getElementById('dateText');
+  const countdownEl = document.getElementById('countdown');
+  try{ const d = new Date(TRIP_DATE.replace(' ','T')); if(!isNaN(+d)){ dateText.textContent = d.toLocaleString(); } }catch(e){}
+
+  function updateCountdown(){
+    const target = new Date(TRIP_DATE.replace(' ','T')).getTime();
+    const now = Date.now();
+    let diff = Math.max(0, target - now);
+    const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
+    const h = Math.floor(diff / (1000*60*60)); diff -= h*60*60*1000;
+    const m = Math.floor(diff / (1000*60)); diff -= m*60*1000;
+    const s = Math.floor(diff / 1000);
+    countdownEl.textContent = `${String(d).padStart(2,'0')}d ${String(h).padStart(2,'0')}u ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+  }
+  setInterval(updateCountdown, 1000); updateCountdown();
+
+  // ===== Fake price engine =====
+  const markets = [
+    {sym:'BRC', name:'BeerCoin', value: 8.7},
+    {sym:'PZT', name:'PizzaToken', value: 12.4},
+    {sym:'LHC', name:'LaughCoin', value: 100},
+    {sym:'LVC', name:'LoveChain', value: 0},
+    {sym:'PRG', name:'Prague Explorer', value: 4.2}
+  ];
+  const ratesEl = document.getElementById('rates');
+  const tape = document.getElementById('tickerTape');
+
+  function renderRates(){
+    ratesEl.innerHTML = '';
+    markets.forEach(m=>{
+      const delta = ((Math.random()-0.45)*2).toFixed(2);
+      m.value = Math.max(-99, Math.min(999, +(m.value + +delta).toFixed(2)));
+      const card = document.createElement('div');
+      card.className = 'rate-card';
+      card.innerHTML = `<strong>${m.name} (${m.sym})</strong><br/>`+
+                       `Δ ${m.value}% ${m.value>=0?'▲':'▼'}`;
+      ratesEl.appendChild(card);
+    });
+    tape.textContent = markets.map(m=>`${m.sym} ${m.value>=0?'▲':'▼'} ${m.value.toFixed(1)}%`).join(' • ');
+  }
+  setInterval(renderRates, 1500); renderRates();
+
+  // ===== CTA buttons =====
+  const claimBtn = document.getElementById('claimBtn');
+  const modal = document.getElementById('airdropModal');
+  const closeModal = document.getElementById('closeModal');
+  const confirmJoin = document.getElementById('confirmJoin');
+  const whatsappBtn = document.getElementById('whatsappBtn');
+
+  function openModal(){ modal.style.display = 'flex'; confetti(); }
+  function close(){ modal.style.display = 'none'; }
+
+  claimBtn.addEventListener('click', openModal);
+  closeModal.addEventListener('click', close);
+  confirmJoin.addEventListener('click', ()=>{
+    alert('Top! Zet even je ✅ in de WhatsApp GroupChain.');
+    close();
+  });
+  whatsappBtn.addEventListener('click', ()=>{
+    alert('Open jullie groepsapp en bevestig: “Ik HODL erbij in Praag!”');
+  });
+
+  // ===== tiny confetti (emoji) =====
+  function confetti(){
+    const EMOJIS = ['🍺','🎉','🚀','💎','😂'];
+    for(let i=0;i<30;i++){
+      const s = document.createElement('div');
+      s.textContent = EMOJIS[Math.floor(Math.random()*EMOJIS.length)];
+      s.style.position='fixed';
+      s.style.left=Math.random()*100+'%';
+      s.style.top='-10px';
+      s.style.fontSize=(16+Math.random()*22)+'px';
+      s.style.transition='transform 2.2s ease, opacity 2.2s ease';
+      s.style.zIndex=60;
+      document.body.appendChild(s);
+      requestAnimationFrame(()=>{
+        s.style.transform=`translateY(${window.innerHeight+60}px) rotate(${(Math.random()*720-360)}deg)`;
+        s.style.opacity='0';
+      });
+      setTimeout(()=>s.remove(),2300);
+    }
+  }
+</script>
+</body>
+</html>
